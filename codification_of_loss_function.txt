@@ -1,0 +1,4 @@
+Codification of loss functions:
+
+'ce' : cross entropy
+'csce' :
