@@ -2,6 +2,7 @@
 _________________
 
 This is the official implementation of HMLoss in the paper [Addressing Class Imbalance with Hard Mining Loss](https:) in Tensorflow.
+### Abstract figure
 
 ### Dependency
 The code is buil with following libraries
@@ -16,13 +17,18 @@ The code is buil with following libraries
 ### Training
 We provide several training examples with this repo:
 
-- To train the HMLoss baseline on long-tailed imbalance with ratio of 100
+# On cifar repo
+- To train the HMLoss baseline on long-tailed imbalance with ratio of 100 
 
 ```bash
-python cifar_train.py --gpu 0 --imb_type exp --imb_factor 0.01 --loss_type CE --train_rule None
+python train_cifar.py --loss_function 'hmld100000g05a75' --dataset_name 'cifar10' --loss_type 'softmax' --imb_type 'exp' --imb_ratio 0.01  
 ```
 
+- To generate result once the models are trained, example with the HMLoss baseline on long-tailed imbalance with ratio of 100
 
+```bash
+python result_analysis.py --dataset 'cifar10' --loss_function 'ce' 'csce' --imb_type 'exp' --imb_ratio 0.01 
+```
 ### Reference
 
 If you find our paper and repo useful, please cite as
