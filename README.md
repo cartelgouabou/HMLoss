@@ -41,33 +41,28 @@ Standalone usage:
 - ISIC2019 [ISIC2019](https://challenge2019.isic-archive.com/). The original data will be preprocessed by `/isic2019_implementation/preprocessing/preprocessImageConstancy.m`and split by `/isic2019_implementation/preprocessing/train_valid_split_task.py`.
 
 ### Training
-We provide several training examples with this repo:
+We provide several training examples with this repo. Please refer to `codification_of_loss_function.txt` to know the coding of the cost function to use
 
 # On cifar repo
 - To train the HMLoss baseline on long-tailed imbalance with ratio of 100 
 
 ```bash
-python train_cifar.py --loss_function 'hmld100000g05a75' --dataset_name 'cifar10' --loss_type 'softmax' --imb_type 'exp' --imb_ratio 0.01  
+python train_cifar.py --loss_function 'hmld10000000g05a75' --dataset_name 'cifar10' --loss_type 'softmax' --imb_type 'exp' --imb_ratio 0.01  
 ```
 
 - To generate result once the models are trained, example with the HMLoss baseline on long-tailed imbalance with ratio of 100
 
 ```bash
-python result_analysis.py --dataset 'cifar10' --loss_function 'ce' 'csce' --imb_type 'exp' --imb_ratio 0.01 
+python result_analysis.py --dataset 'cifar10' --loss_function 'hmld10000000g05a75' --imb_type 'exp' --imb_ratio 0.01 
 ```
 
 # On isic repo
-- To train the HMLoss baseline on long-tailed imbalance with ratio of 100 
+- To train the HMLoss baseline on 2-class version of isic2019 for melanoma versus nevi classification
 
 ```bash
-python train_cifar.py --loss_function 'hmld100000g05a75' --dataset_name 'cifar10' --loss_type 'softmax' --imb_type 'exp' --imb_ratio 0.01  
+python train_isic.py --loss_function 'hmld100000g05a75'   
 ```
 
-- To generate result once the models are trained, example with the HMLoss baseline on long-tailed imbalance with ratio of 100
-
-```bash
-python result_analysis.py --dataset 'cifar10' --loss_function 'ce' 'csce' --imb_type 'exp' --imb_ratio 0.01 
-```
 
 ### Reference
 
