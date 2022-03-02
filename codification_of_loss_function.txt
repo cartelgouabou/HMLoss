@@ -7,7 +7,8 @@ Codification for Hard Mining Loss:
 
 Codification of SOA loss functions:
 
-'ce' : cross entropy
+'ce' : categorical cross entropy
+'bce' : binary cross entropy
 'csce' : cross entropy weighted by inverse class frequencies
 'flg1': focal loss with gamma parameter equal to 1
 'flg2a50': alpha focal loss with gamma parameter equal to 2 and alpha equal to 0.5
