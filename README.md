@@ -3,7 +3,8 @@ _________________
 
 This is the official implementation of HMLoss in the paper [Addressing Class Imbalance with Hard Mining Loss](https:) in Tensorflow.
 ### Abstract figure
-
+.. image:: ressource/images/abstract_figure.png
+    :alt: Focal loss plot
 ### Dependency
 The code is buil with following libraries
 - [Tensorflow](https://www.tensorflow.org) 2.4
