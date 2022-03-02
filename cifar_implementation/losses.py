@@ -149,7 +149,7 @@ class CategoricalHardMiningLoss(Loss):
     Usage with the 'compile()' API:
         
      ```python   
-     model.compile(optimizer='sgd',loss=HardMiningLoss(alpha=.75, gamma=1, detlta=10000000)) 
+     model.compile(optimizer='sgd',loss=CategoricalHardMiningLoss(alpha=.75, gamma=1, detlta=10000000)) 
      ```
     """
     """
