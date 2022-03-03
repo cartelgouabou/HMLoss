@@ -8,7 +8,7 @@ This is the official implementation of HMLoss in the paper [Addressing Class Imb
 ### Dependency
 The code is build with following libraries
 - [Tensorflow](https://www.tensorflow.org) 2.4
-- [Numpy](https://numpy.org/) 2.4
+- [Numpy](https://numpy.org/) 
 - [Pandas](https://pandas.pydata.org/)
 - [Sklearn](https://scikit-learn.org/stable/)
 
