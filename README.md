@@ -42,7 +42,7 @@ Standalone usage:
 - ISIC2019 [ISIC2019](https://challenge2019.isic-archive.com/). The original data will be preprocessed by `/isic2019_implementation/preprocessing/preprocessImageConstancy.m`and split by `/isic2019_implementation/preprocessing/train_valid_split_task.py`.
 
 ### Training
-We provide several training examples with this repo. Please refer to `codification_of_loss_function.txt` to know the coding of the cost function to use
+We provide several training examples with this repo. Please refer to `codification_of_loss_function.txt` to know the codification of the cost function to use
 
 # On cifar repo
 - To train the HMLoss baseline on long-tailed imbalance with ratio of 100 
