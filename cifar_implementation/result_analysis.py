@@ -25,7 +25,7 @@ parser = argparse.ArgumentParser(description='Tensorflow Cifar Generate results'
 parser.add_argument('--dataset','--dataset_name', default='cifar10', help='dataset setting',dest='dataset_name')
 parser.add_argument('--loss_function_list', nargs='+', type=str, help='list of loss functions to evaluate',dest='case_list')
 parser.add_argument('--imb_type', default="exp", type=str, help='imbalance type')
-parser.add_argument('--imb_ratio_list','--ir_list', nargs='+', type=str, help='list of imbalance ratio to evaluate',dest='ir_list')
+parser.add_argument('--imb_ratio_list','--ir_list', nargs='+', type=float, help='list of imbalance ratio to evaluate',dest='ir_list')
 parser.add_argument('--num_runs', default=3, type=int, help='number of runs to launch ')
 parser.add_argument('--wd', '--weight-decay', default=0.0002, type=float,
                     metavar='W', help='weight decay fro convolutions (default: 1e-4)',
@@ -34,7 +34,9 @@ parser.add_argument('--kernel-initializer', '--k-init', default='he_normal', typ
                     dest='kernel_initializer')
 args = parser.parse_args()
 
+print('List of case to evaluate:')
 print(args.case_list)
+print('List of imbalance ratio to evaluate:')
 print(args.ir_list)
 path_resultat =root_path+'/RESULTATS/'
 if not os.path.exists(path_resultat):
@@ -59,7 +61,7 @@ for case in args.case_list:
         path_checkpoint=root_path+'/'+case+'/checkpoint'
         data=[]
         for run in run_list:
-            filenames=args.dataset_name+'_'+args.imb_type+'_'+case+'_ir_'+ir+'_'+run
+            filenames=args.dataset_name+'_'+args.imb_type+'_'+case+'_ir_'+str(ir)+'_'+run
             path_weights_load= path_checkpoint+'/best_weights/'+'best_weights_'+filenames+'.hdf5'
             callback=pd.read_csv(path_checkpoint+'/training_history/'+'best_callbacks_'+filenames+'.csv')
             training_time=callback.training_time[0]
@@ -79,6 +81,6 @@ for case in args.case_list:
         cv=pd.DataFrame(data,
                         index=metric_list,
                         columns=run_list)
-        name_result='statistic_'+args.dataset_name+'_'+args.imb_type+'_'+case+'_ir_'+ir+'.csv'
+        name_result='statistic_'+args.dataset_name+'_'+args.imb_type+'_'+case+'_ir_'+str(ir)+'.csv'
         cv.to_csv(path_resultat+name_result)
     
