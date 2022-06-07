@@ -23,13 +23,7 @@ The code is build with following libraries
 - To train the HMLoss baseline on long-tailed imbalance with ratio of 200 
 
 ```bash
-python train_cifar.py --loss_function 'HML' --dataset_name 'cifar100' --imb_type 'exp' --imb_ratio 0.02  
-```
-
-- To generate result once the models are trained, example with the HMLoss baseline on long-tailed imbalance with ratio of 100
-
-```bash
-python result_analysis.py --dataset 'cifar10' --loss_function 'hmld10000000g05a75' --imb_type 'exp' --imb_ratio 0.01 
+python train_cifar.py --loss_function 'HML' --weighting_type CS --dataset_name 'cifar100' --imb_type 'exp' --imb_ratio 0.02 --gpu 0 
 ```
 
 # On isic repo
