@@ -157,6 +157,11 @@ with open(os.path.join(args.history_path, args.store_name, 'args_history.txt'), 
 tf_writer = SummaryWriter(log_dir=os.path.join(args.history_path, args.store_name))
 result_save=pd.DataFrame(columns=['run','best_epoch','bacc','auc'])   
 for run in run_list:
+    model = models.efficientnet_b3(pretrained=True)
+    model.classifier[1]=nn.Linear(1536, 2)
+    print('[INFO]: Set all trainable layers to TRUE...')
+    for params in model.parameters():
+        params.requires_grad = True
     for name, param in model.named_parameters():
      if param.requires_grad and name in freeze_layers_names:
          param.requires_grad = False
