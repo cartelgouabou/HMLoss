@@ -136,11 +136,6 @@ val_loader = DataLoader(validation_set, batch_size=args.batch_size//2, shuffle=F
 test_set = CustomImageDataset(df_test, transform=train_transform)
 test_loader = DataLoader(test_set, batch_size=args.batch_size//2, shuffle=False, num_workers=args.workers)
 
-model.to(device)
-optimizer = optim.Adam(model.parameters(), lr=1e-3)
-#criterion = nn.CrossEntropyLoss(weight=per_cls_weights).to(device)
-scheduler = CyclicLR(optimizer=optimizer, base_lr=args.max_lr/100, max_lr=args.max_lr,mode='triangular2',cycle_momentum=False)
-
 run_list=[]
 for run in range(args.num_runs):
     run_list.append('run'+str(run))
@@ -162,6 +157,13 @@ with open(os.path.join(args.history_path, args.store_name, 'args_history.txt'), 
 tf_writer = SummaryWriter(log_dir=os.path.join(args.history_path, args.store_name))
 result_save=pd.DataFrame(columns=['run','best_epoch','bacc','auc'])   
 for run in run_list:
+    for name, param in model.named_parameters():
+     if param.requires_grad and name in freeze_layers_names:
+         param.requires_grad = False
+    print('[INFO]: Freezing %d percent of the top trainable layers...' % (100-args.ratio_finetune))
+    optimizer = optim.Adam(model.parameters(), lr=1e-3)
+    scheduler = CyclicLR(optimizer=optimizer, base_lr=args.max_lr/100, max_lr=args.max_lr,mode='triangular2',cycle_momentum=False)
+    model.to(device)
     print('curent run:')
     print(run)
     epoch_num = args.num_epochs
