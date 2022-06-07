@@ -72,12 +72,6 @@ keys=list(params.keys())
 num_layers=len(keys)
 num_freeze_layer=((100-args.ratio_finetune)*num_trainable_layers)//100
 freeze_layers_names=trainable_layers_names[:int(num_freeze_layer)]
-
-for name, param in model.named_parameters():
-     if param.requires_grad and name in freeze_layers_names:
-         param.requires_grad = False
-print('[INFO]: Freezing %d percent of the top trainable layers...' % (100-args.ratio_finetune))
-
     
 model.to(device)
 
