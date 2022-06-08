@@ -76,7 +76,7 @@ class FocalLoss(nn.Module):
     
 
 def softmax_hard_mining_loss(input_values,  delta):
-    """Computes the focal loss"""
+    """Computes the hard mining loss"""
     p = torch.exp(-input_values)
     eps=1e-10
     p=torch.clip(p,eps,1.-eps)
