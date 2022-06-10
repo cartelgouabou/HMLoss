@@ -7,12 +7,16 @@ Find the french version of the paper published in GRETSI 2022 [there](https:).
 
 ![Alt text](ressources/images/abstract_figure.png?raw=true "HMLoss")
 ### Dependency
-The code is build with following libraries
+The code is build with following main libraries
 - [Pytorch](https://www.tensorflow.org) 1.11.0
 - [Numpy](https://numpy.org/) 
 - [Pandas](https://pandas.pydata.org/)
 - [Sklearn](https://scikit-learn.org/stable/)
 - [Matlab](https://ch.mathworks.com/fr/products/matlab.html)
+You can install all dependencies with requirements.txt following the command:
+```bash
+pip install -r requirements.txt 
+```
 
 
 ### Dataset
