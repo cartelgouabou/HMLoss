@@ -50,5 +50,16 @@ python train_inat.py --loss_type 'HML' --delta 10000
 If you find our paper and repo useful, please cite as
 
 ```
-@inproceedings{
+@inproceedings{foahomgouabou:hal-03725510,
+  TITLE = {{HMLoss: Une fonction de cout robuste au d{\'e}s{\'e}quilibre des classes}},
+  AUTHOR = {Foahom Gouabou, Arthur Cartel and Iguernaissi, Rabah and Damoiseaux, Jean Luc and Moudafi, Abdellatif and Merad, Djamal},
+  URL = {https://hal.archives-ouvertes.fr/hal-03725510},
+  BOOKTITLE = {{GRETSI}},
+  ADDRESS = {Nancy, France},
+  YEAR = {2022},
+  MONTH = Sep,
+  KEYWORDS = {Class imbalance problem ; Deep learning DL ; Loss functions ; Image classification and analysis},
+  PDF = {https://hal.archives-ouvertes.fr/hal-03725510/file/HMLoss%20Une%20fonction%20de%20co%C3%BBt%20robuste%20au%20d%C3%A9s%C3%A9quilibre%20des%20classes.pdf},
+  HAL_ID = {hal-03725510},
+  HAL_VERSION = {v1},
 }
