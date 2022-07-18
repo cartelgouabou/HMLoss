@@ -2,7 +2,7 @@
 _________________
 
 This is the official implementation of HMLoss in the paper [Addressing Class Imbalance with Hard Mining Loss](https:) in Pytorch.
-Find the french version of the paper published in GRETSI 2022 [there]([https:](https://hal.archives-ouvertes.fr/hal-03725510)).
+Find the french version of the paper published in GRETSI 2022 [there](https://hal.archives-ouvertes.fr/hal-03725510).
 ### Abstract figure
 
 ![Alt text](ressources/images/abstract_figure.png?raw=true "HMLoss")
