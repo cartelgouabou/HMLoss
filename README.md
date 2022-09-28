@@ -1,4 +1,4 @@
-## Addressing Class Imbalance with Hard Mining Loss (HMLoss)
+## Rethinking decoupled training with bag of tricks for long-tailed recognition
 _________________
 
 This is the official implementation of HMLoss in the paper [Rethinking decoupled training with bag of tricks for long-tailed recognition](https:) in Pytorch.
