@@ -139,9 +139,12 @@ def main_worker(gpu, ngpus_per_node, args,ir,best_acc1,imb_type):
             criterion = FocalLoss(weight=per_cls_weights).cuda(args.gpu)
         elif args.loss_type == 'LDAM':
             criterion = LDAMLoss(weight=per_cls_weights,cls_num_list=cls_num_list).cuda(args.gpu)
-        elif args.loss_type == 'HML':
+        elif args.loss_type == 'HML1':
             criterion = nn.CrossEntropyLoss(weight=None).cuda(args.gpu)
             criterion_hm = SoftmaxHardMiningLoss(weight=per_cls_weights,delta=args.delta).cuda(args.gpu)
+        elif args.loss_type == 'HML2':
+             criterion =  SoftmaxHardMiningLoss(weight=None).cuda(args.gpu)
+             criterion_hm =  SoftmaxHardMiningLoss(weight=per_cls_weights).cuda(args.gpu)
         else:
             warnings.warn('Loss type is not listed')
             return
