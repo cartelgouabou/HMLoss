@@ -29,20 +29,20 @@ pip install -r requirements.txt
 - To train the HMLoss baseline on long-tailed imbalance with ratio of 200 
 
 ```bash
-python train_cifar.py --loss_function 'HML' --weighting_type CS --dataset_name 'cifar100' --imb_type 'exp' --imb_ratio 0.02 --gpu 0 
+python train_cifar.py --loss_function 'HML1' --weighting_type CS --dataset_name 'cifar100' --imb_type 'exp' --imb_ratio 0.02 --gpu 0 
 ```
 
 # On isic repo
 - To train the HMLoss baseline on 2-class version of isic2019 for melanoma versus nevi classification
 
 ```bash
-python train_isic.py --loss_type 'HML' --delta 10000   
+python train_isic.py --loss_type 'HML1' --delta 10000   
 ```
 # On inaturalist repo
 - To train the HMLoss baseline on inaturalist 2018 dataset
 
 ```bash
-python train_inat.py --loss_type 'HML' --delta 10000   
+python train_inat.py --loss_type 'HML1' --delta 10000   
 ```
 
 ### Reference
@@ -50,7 +50,7 @@ python train_inat.py --loss_type 'HML' --delta 10000
 If you find our paper and repo useful, please cite as
 
 ```
-@inproceedings{felix2021cross,
+@inproceedings{foahom2022rethinking,
   title={Rethinking decoupled training with bag of tricks for long-tailed recognition},
   author={Foahom Gouabou, Arthur Cartel and Iguernaissi, Rabah and Damoiseaux, Jean Luc and Moudafi, Abdellatif and Merad, Djamal},
   booktitle={2022 Digital Image Computing: Techniques and Applications (DICTA)},
