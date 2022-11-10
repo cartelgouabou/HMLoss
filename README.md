@@ -1,7 +1,7 @@
 ## Rethinking decoupled training with bag of tricks for long-tailed recognition
 _________________
 
-This is the official implementation of HMLoss in the paper [Rethinking decoupled training with bag of tricks for long-tailed recognition](https:) in Pytorch.
+This is the official implementation of HMLoss in the paper [Rethinking decoupled training with bag of tricks for long-tailed recognition](https://hal.archives-ouvertes.fr/hal-03826758/) in Pytorch.
 Find the french version of the paper published in GRETSI 2022 [there](https://hal.archives-ouvertes.fr/hal-03725510).
 ### Abstract figure
 
